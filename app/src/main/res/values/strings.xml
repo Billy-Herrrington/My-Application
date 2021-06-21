@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="fullname">Fullname</string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login_here">Login here</string>
+    <string name="welcome">Welcome to the club boddy!</string>
+    <string name="signuphere">Sing up here</string>
+</resources>
