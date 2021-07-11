@@ -16,7 +16,7 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class Login extends AppCompatActivity {
     TextInputEditText textInputEditTextUsername, textInputEditTextPassword;
-    Button buttonLogin, checkBut;
+    Button buttonLogin;
     TextView textViewSingUp;
     ProgressBar progressBar;
     @Override
@@ -24,18 +24,12 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        textInputEditTextPassword = findViewById(R.id.username);
+        textInputEditTextUsername = findViewById(R.id.username);
         textInputEditTextPassword = findViewById(R.id.password);
         buttonLogin = findViewById(R.id.buttonLogin);
         textViewSingUp = findViewById(R.id.signUpText);
         progressBar = findViewById(R.id.progress);
-        checkBut = findViewById(R.id.checkBut);
 
-        checkBut.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(intent);
-            finish();
-        });
 
         textViewSingUp.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), SingUp.class);
@@ -57,7 +51,7 @@ public class Login extends AppCompatActivity {
                     String[] data = new String[2];
                     data[0] = username;
                     data[1] = password;
-                    PutData putData = new PutData("http://192.168.0.119/LoginRegister/login.php", "POST", field, data);
+                    PutData putData = new PutData("http://192.168.0.119:52101", "POST", field, data);
                     if (putData.startPut()) {
                         if (putData.onComplete()) {
                             progressBar.setVisibility(View.GONE);
